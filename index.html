@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Muskan 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:linear-gradient(135deg,#ffd6e7,#fff0f7);overflow-x:hidden;color:#444;scroll-behavior:smooth}
+section{padding:80px 20px;text-align:center}
+.glass{background:rgba(255,255,255,.25);backdrop-filter:blur(12px);border-radius:25px;padding:25px;box-shadow:0 8px 30px rgba(0,0,0,.1)}
+#gate{height:100vh;display:flex;align-items:center;justify-content:center}
+input,button{padding:12px 18px;border-radius:30px;border:none}
+button{background:#ff5c9f;color:white;cursor:pointer}
+.hidden{display:none}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center}
+h1{font-size:3rem;color:#ff4d8d}
+.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.gallery img{width:260px;height:360px;object-fit:cover;border-radius:20px;transition:.5s;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.gallery img:hover{transform:scale(1.08) rotate(2deg)}
+.cardwrap{display:flex;flex-wrap:wrap;justify-content:center;gap:15px}
+.card{background:white;padding:20px;border-radius:20px;cursor:pointer;width:220px}
+.heart{position:fixed;bottom:-20px;animation:float 8s linear infinite}
+@keyframes float{to{transform:translateY(-110vh)}}
+#surprise{display:none;font-size:1.4rem;color:#ff4d8d}
+</style>
+</head>
+<body>
+  
+
+<div id="gate">
+<div class="glass">
+<h2>🎀 A Special Surprise 🎀</h2><br>
+<p>What is your name?</p><br>
+<input id="nameBox" placeholder="Enter your name">
+<button onclick="unlock()">Unlock</button>
+<p id="msg"></p>
+</div>
+</div>
+<div id="main" class="hidden">
+<audio controls autoplay loop>
+<source src="killswitch.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<section class="hero">
+<div class="glass">
+<h1>🎂 Happy Birthday Muskan 🎂</h1>
+<h3>My Favourite Marathi Mulgi 🌸</h3><br>
+<p id="typing"></p>
+</div>
+</section>
+
+<section>
+<h2>📸 Beautiful Moments</h2><br>
+<div class="gallery">
+<img src="photo1.jpg"><img src="photo2.jpg"><img src="photo3.jpg"><img src="photo4.jpg"><img src="photo5.jpg">
+</div>
+</section>
+
+<section>
+<h2>🌷 Some Important Questionss !</h2><br>
+<div class="cardwrap">
+<div class="card">Who is the birthday girl today?<br><b>Muskan ❤️</b></div>
+<div class="card">Who deserves the biggest cake?<br><b>Muskan 🎂</b></div>
+<div class="card">Who is the cutest Marathi Mulgi?<br><b>Muskan 🌸</b></div>
+</div>
+</section>
+
+<section>
+<div class="glass" style="max-width:800px;margin:auto">
+<h2>💌 Letter From Naman</h2><br>
+<p>
+Dear Muskan,<br><br>
+Happy Birthday. Today is all about celebrating the wonderful person you are.
+May your smile never fade, may your dreams keep growing, and may happiness always find its way to you.
+Thank you for being uniquely you. I hope this year brings countless memories, success, laughter and beautiful moments.
+Stay happy, stay blessed and keep shining like you always do. You are very strong girlyyy !!🌸💖
+<br><br>
+— Naman ❤️
+</p>
+</div>
+</section>
+
+<section>
+<button onclick="document.getElementById('surprise').style.display='block'">🎁 Open Surprise</button>
+<div id="surprise">
+<br>✨ Happy Birthday Muskan ✨<br>
+You are truly special. Never stop smiling. 💖🌸
+</div>
+</section>
+</div>
+
+<script>
+function unlock(){
+ let n=document.getElementById('nameBox').value.trim().toLowerCase();
+ if(n==='muskan'){
+   gate.style.display='none';
+   main.classList.remove('hidden');
+ }else{
+   document.getElementById('msg').innerText='Oops 😝 This surprise is reserved for Muskan';
+ }
+}
+const txt="Today is the day someone truly special came into this world ✨";
+let i=0;
+function type(){
+ if(i<txt.length){document.getElementById('typing').innerHTML+=txt[i++];setTimeout(type,40);}
+}
+setTimeout(type,500);
+for(let i=0;i<35;i++){
+ let h=document.createElement('div');
+ h.className='heart';
+ h.innerHTML='💖';
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(15+Math.random()*20)+'px';
+ h.style.animationDuration=(5+Math.random()*5)+'s';
+ document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
